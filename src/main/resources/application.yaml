@@ -1,3 +1,20 @@
 spring:
   application:
     name: backend
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/billbookmanagement
+    username: ${DB_USER:root}
+    password: ${DB_PASSWORD:password}
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${OAUTH_CLIENT_ID}
+            client-secret: ${OAUTH_CLIENT_SECRET}
+          github:
+            client-id:
+            client-secret:
+
+server:
+  port: 8000
